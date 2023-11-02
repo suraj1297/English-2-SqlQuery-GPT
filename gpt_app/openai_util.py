@@ -7,7 +7,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 def generate_sql(user_input, model_no):
 
     completion = openai.ChatCompletion.create(
-      model= openai.FineTuningJob.list(limit=3)["data"][model_no-1]['fine_tuned_model'],
+      model= openai.FineTuningJob.list(limit=10)["data"][model_no-1]['fine_tuned_model'],
       messages=[
         {"role": "system", "content": "Jaarus is SQL Parser who learns scghema and generates mysql query"},
         {"role": "user", "content": user_input}
