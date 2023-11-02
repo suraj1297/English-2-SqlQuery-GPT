@@ -1,0 +1,105 @@
+[
+    {
+        "messages": [{
+            "role": "system",
+            "content": "Jaarus is SQL Parser who learns scghema and generates mysql query"
+        }, {
+            "role": "user",
+            "content": "Here is the schema: CREATE TABLE 'Sales_Unit' ('ID' int NOT NULL AUTO_INCREMENT, 'ProductName' text,'SalesUnitVal' int DEFAULT NULL, PRIMARY KEY ('ID'), UNIQUE KEY 'ID_UNIQUE' ('ID') ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;"
+        }, {
+            "role": "assistant",
+            "content": "Thanks for the schema"
+        }]
+    },
+    {
+        "messages": [{
+            "role": "system",
+            "content": "Jaarus is SQL Parser who learns scghema and generates mysql query"
+        }, {
+            "role": "user",
+            "content": "Here is the schema: CREATE TABLE `Products_Table` (`ID` int NOT NULL, `CategoryID` int DEFAULT NULL, `ProductName` text, `Description` text, PRIMARY KEY (`ID`), UNIQUE KEY `ID_UNIQUE` (`ID`), KEY `CategoryID_idx` (`CategoryID`), CONSTRAINT `CategoryID` FOREIGN KEY (`CategoryID`) REFERENCES `Categories` (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;"
+            
+        }, {
+            "role": "assistant",
+            "content": "Thanks for the schema"
+        }]
+    },
+    {
+        "messages": [{
+            "role": "system",
+            "content": "Jaarus is SQL Parser who learns scghema and generates mysql query"
+        }, {
+            "role": "user",
+            "content": "Here is the schema: CREATE TABLE Orders_Table ( ID int NOT NULL AUTO_INCREMENT, CustomerID int DEFAULT NULL, Paid text, PreOrder text, Notes text, PickupDate text, PRIMARY KEY (ID), UNIQUE KEY ID_UNIQUE (ID), KEY CustomerID_idx (CustomerID), CONSTRAINT CustomerID FOREIGN KEY (CustomerID) REFERENCES Customers (ID) )"
+            
+        }, {
+            "role": "assistant",
+            "content": "Thanks for the schema"
+        }]
+    },
+    {
+        "messages": [{
+            "role": "system",
+            "content": "Jaarus is SQL Parser who learns scghema and generates mysql query"
+        }, {
+            "role": "user",
+            "content": "Here is the schema: CREATE TABLE Orders_December ( ProductTypes text, ProductName text, SalesUnit text, ofSalesUnitSold double DEFAULT NULL, ValueofSalesUnit int DEFAULT NULL, ActualSold double DEFAULT NULL )"
+            
+        }, {
+            "role": "assistant",
+            "content": "Thanks for the schema"
+        }]
+    },
+    {
+        "messages": [{
+            "role": "system",
+            "content": "Jaarus is SQL Parser who learns scghema and generates mysql query"
+        }, {
+            "role": "user",
+            "content": "Here is the schema: CREATE TABLE Order_Items ( ID int NOT NULL AUTO_INCREMENT, OrderID int DEFAULT NULL, MenuItemID int DEFAULT NULL, Quantity text, PRIMARY KEY (ID), UNIQUE KEY ID_UNIQUE (ID), KEY OrderID_idx (OrderID), KEY MenuItemID_idx (MenuItemID), CONSTRAINT MenuItemID FOREIGN KEY (MenuItemID) REFERENCES Menu_Items (ID), CONSTRAINT OrderID FOREIGN KEY (OrderID) REFERENCES Orders_Table (ID) )"
+            
+        }, {
+            "role": "assistant",
+            "content": "Thanks for the schema"
+        }]
+    },
+    {
+        "messages": [{
+            "role": "system",
+            "content": "Jaarus is SQL Parser who learns scghema and generates mysql query"
+        }, {
+            "role": "user",
+            "content": "Here is the schema: CREATE TABLE Menu_Items ( ID int NOT NULL AUTO_INCREMENT, ProductID int DEFAULT NULL, SalesUnitID int DEFAULT NULL, Price double DEFAULT NULL, PRIMARY KEY (ID), UNIQUE KEY ID_UNIQUE (ID), KEY ProductID_idx (ProductID), KEY SalesUnitID_idx (SalesUnitID), CONSTRAINT ProductID FOREIGN KEY (ProductID) REFERENCES Products_Table (ID), CONSTRAINT SalesUnitID FOREIGN KEY (SalesUnitID) REFERENCES Sales_Unit (ID) )"
+            
+        }, {
+            "role": "assistant",
+            "content": "Thanks for the schema"
+        }]
+    },
+    {
+        "messages": [{
+            "role": "system",
+            "content": "Jaarus is SQL Parser who learns scghema and generates mysql query"
+        }, {
+            "role": "user",
+            "content": "Here is the schema: CREATE TABLE Customers ( ID int NOT NULL AUTO_INCREMENT, FirstName text, LastName text, StreetAddress text, State text, ZipCode text, Email text, PhoneNumber text, City text, AddtoMailingList text, OtherNotes text, PRIMARY KEY (ID), UNIQUE KEY ID_UNIQUE (ID) )"
+            
+        }, {
+            "role": "assistant",
+            "content": "Thanks for the schema"
+        }]
+    },
+    {
+        "messages": [{
+            "role": "system",
+            "content": "Jaarus is SQL Parser who learns scghema and generates mysql query"
+        }, {
+            "role": "user",
+            "content": "Here is the schema: CREATE TABLE Categories ( ID int NOT NULL, ProductTypes text, PRIMARY KEY (ID), UNIQUE KEY ID_UNIQUE (ID) )"
+            
+        }, {
+            "role": "assistant",
+            "content": "Thanks for the schema"
+        }]
+    }
+]

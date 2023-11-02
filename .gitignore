@@ -1,0 +1,8 @@
+spider/
+.ipynb_checkpoints/
+gpt-model.json
+__pycache__
+gpt_app/__pycache__
+gpt_app/gpt_sql.egg-info
+gpt_app/.venv
+.DS_Store
